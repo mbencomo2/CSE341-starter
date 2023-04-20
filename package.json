@@ -1,0 +1,22 @@
+{
+  "name": "cse341-starter",
+  "version": "1.0.0",
+  "description": "First assignment for CSE341",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbencomo2/CSE341-starter.git"
+  },
+  "keywords": [
+    "W01"
+  ],
+  "author": "MBencomo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mbencomo2/CSE341-starter/issues"
+  },
+  "homepage": "https://github.com/mbencomo2/CSE341-starter#readme"
+}
