@@ -1,30 +1,28 @@
 {
-  "name": "cse341-starter",
+  "name": "cse341-apicourse-code",
   "version": "1.0.0",
-  "description": "First assignment for CSE341",
-  "type": "commonjs",
-  "main": "index.js",
+  "description": "code to give to students for the cse341 course",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mbencomo2/CSE341-starter.git"
+    "url": "git+https://github.com/nathanbirch/cse341-apiCourse-code.git"
   },
-  "keywords": [
-    "W01"
-  ],
-  "author": "MBencomo",
+  "author": "Nathan Birch",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mbencomo2/CSE341-starter/issues"
+    "url": "https://github.com/nathanbirch/cse341-apiCourse-code/issues"
   },
-  "homepage": "https://github.com/mbencomo2/CSE341-starter#readme",
+  "homepage": "https://github.com/nathanbirch/cse341-apiCourse-code#readme",
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mongodb": "^5.3.0",
+    "mongodb": "^5.3.0"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.22"
   }
 }
