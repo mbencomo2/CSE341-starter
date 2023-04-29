@@ -1,0 +1,21 @@
+//LOCALHOST
+###
+# Root
+GET http://localhost:8080/
+# Get all contacts
+###
+GET http://localhost:8080/contacts
+###
+# Get a single contact by first name
+GET http://localhost:8080/contacts/644b50700b86be5f459bb62f
+
+//RENDER
+###
+# Root
+GET https://w01-starter-service.onrender.com/
+# Get all contacts
+###
+GET https://w01-starter-service.onrender.com/contacts
+###
+# Get a single contact by first name
+GET https://w01-starter-service.onrender.com/contacts/644b50700b86be5f459bb62f

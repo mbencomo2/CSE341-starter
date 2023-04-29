@@ -15,7 +15,6 @@ Simple nodeJS api for practicing how to user Node with a database. In this case,
 - nodemon
 
 ## Setup
-
 Clone the repo by running the following code in your directory of choice:
 
 ```console
@@ -28,3 +27,11 @@ After which you will need to run npm to install the necessary dependencies:
 ```console
 npm install
 ```
+
+## API Docs
+These are the current routes implemented:
+ - /
+    - users
+        - /:id
+    - contacts
+        - /:id

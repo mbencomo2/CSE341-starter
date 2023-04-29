@@ -1,6 +1,7 @@
 const mongodb = require("../db/connect");
+const ObjectId = require("mongodb").ObjectId;
 
-const getContacts = async (req, res, next) => {
+const getContacts = async (req, res) => {
   const result = await mongodb.getDb().db().collection("contacts").find();
   result.toArray().then((lists) => {
     res.setHeader("Content-Type", "application/json");
@@ -9,13 +10,14 @@ const getContacts = async (req, res, next) => {
   });
 };
 
-const getContact = async (req, res, next) => {
-  const searchParam = req.query.firstName;
+const getContact = async (req, res) => {
+  const searchParam = req.params.id;
+  const o_id = new ObjectId(searchParam);
   const result = await mongodb
     .getDb()
     .db()
     .collection("contacts")
-    .find({ firstName: { $eq: searchParam } });
+    .find({_id: o_id});
   result.toArray().then((list) => {
     res.setHeader("Content-Type", "application/json");
     res.setHeader("Access-Controll-Allow-Origin", "*");
