@@ -20,7 +20,7 @@ const getContact = async (req, res, next) => {
     res.setHeader("Content-Type", "application/json");
     res.setHeader("Access-Controll-Allow-Origin", "*");
     if (list.length == 0) {
-      res.status(200).json(`No match for ${searchParam}`);
+      res.status(200).json({ message: `No match for ${searchParam}` });
     } else {
       res.status(200).json(list);
     }

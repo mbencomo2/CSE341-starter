@@ -1,3 +1,7 @@
 node_modules
 .env
 package-lock.json
+frontend/index.html
+frontend/script.js
+frontend/style.css
+app.js
