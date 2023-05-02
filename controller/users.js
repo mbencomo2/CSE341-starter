@@ -1,7 +1,7 @@
 const mongodb = require("../db/connect");
 
 const getUser = async (req, res) => {
-  const result = await mongodb.getDb().db().collection("users").find();
+  const result = await mongodb.getDb().db("test").collection("users").find();
   result.toArray().then((lists) => {
     res.setHeader("Content-Type", "application/json");
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -10,7 +10,7 @@ const getUser = async (req, res) => {
 };
 
 const getUsername = async (req, res) => {
-  const result = await mongodb.getDb().db().collection("users").find();
+  const result = await mongodb.getDb().db("test").collection("users").find();
   result.toArray().then((lists) => {
     const searchParam = req.params.id;
     res.setHeader("Content-Type", "application/json");

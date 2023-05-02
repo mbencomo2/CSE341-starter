@@ -8,6 +8,13 @@ router.use("/", (req, res, next) => {
 });
 
 router.get("/", controller.getContacts);
+//Get a contact
 router.get("/:id", controller.getContact);
+//Create a contact
+router.post("/", controller.createContact);
+//Update a contact
+router.put("/:id", controller.updateContact);
+//delete a contact
+router.delete("/:id", controller.deleteContact);
 
 module.exports = router;

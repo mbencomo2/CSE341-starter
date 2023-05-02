@@ -1,20 +1,26 @@
 # CSE341-starter
+
 - Author: Matthew Bencomo
 - Class: BYUI Pathways Worldwide CSE341
 - Semester: Spring 2023
 
-Simple nodeJS api for practicing how to user Node with a database. In this case, MongoDB.
+Simple nodeJS api for practicing how to use Node with a database. In this case, MongoDB.
 
 ## Dependencies
+
 - dotenv
 - express
 - mongodb
+- body-parser
 
 ## Dev Dependencies
+
 - eslint
 - nodemon
+- prettier
 
 ## Setup
+
 Clone the repo by running the following code in your directory of choice:
 
 ```console
@@ -29,9 +35,14 @@ npm install
 ```
 
 ## API Docs
+
 These are the current routes implemented:
- - /
-    - users
-        - /:id
-    - contacts
-        - /:id
+
+- /
+  - users
+    - GET /:id
+  - contacts
+    - GET /:id - fetch a single contact
+    - POST /:id - Create a new contact
+    - PUT /:id - update a contact, create if it doesn't exist
+    - DELETE /:id - delete a contact
