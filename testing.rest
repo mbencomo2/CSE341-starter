@@ -1,21 +1,67 @@
 //LOCALHOST
 ###
 # Root
-GET http://localhost:8080/
+GET http://localhost:8080/ HTTP/1.1
 # Get all contacts
 ###
-GET http://localhost:8080/contacts
+GET http://localhost:8080/contacts HTTP/1.1
 ###
-# Get a single contact by first name
-GET http://localhost:8080/contacts/644b50700b86be5f459bb62f
+# Get a single contact
+GET http://localhost:8080/contacts/<id> HTTP/1.1
+###
+# Create a new Contact
+POST http://localhost:8080/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Joe",
+    "lastName": "Schmoe",
+    "email": "j.schmoe@email.com",
+    "favColor": "Blue",
+    "birthday": "1985-11-09"
+}
+###
+# Update a Contact
+PUT http://localhost:8080/contacts/<id> HTTP/1.1
+Content-Type: application/json
+
+{
+    "favColor": "Green"
+}
+###
+# Delete a Contact
+DELETE http://localhost:8080/contacts/<id> HTTP/1.1
 
 //RENDER
 ###
 # Root
-GET https://w01-starter-service.onrender.com/
+GET https://w01-starter-service.onrender.com/ HTTP/1.1
+###
 # Get all contacts
+GET https://w01-starter-service.onrender.com/contacts HTTP/1.1
 ###
-GET https://w01-starter-service.onrender.com/contacts
+# Get a single contact
+GET https://w01-starter-service.onrender.com/contacts/<id> HTTP/1.1
 ###
-# Get a single contact by first name
-GET https://w01-starter-service.onrender.com/contacts/644b50700b86be5f459bb62f
+# Create a contact
+POST https://w01-starter-service.onrender.com/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Joe",
+    "lastName": "Schmoe",
+    "email": "j.schmoe@email.com",
+    "favColor": "Blue",
+    "birthday": "1985-11-09"
+}
+###
+# Update a Contact
+PUT https://w01-starter-service.onrender.com/contacts/<id> HTTP/1.1
+Content-Type: application/json
+
+{
+    "favColor": "Green"
+}
+###
+# Delete a Contact
+DELETE https://w01-starter-service.onrender.com/contacts/<id> HTTP/1.1
