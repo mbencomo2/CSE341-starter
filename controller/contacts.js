@@ -5,7 +5,6 @@ const getContacts = async (req, res) => {
   const result = await mongodb.getDb().db("test").collection("contacts").find();
   result.toArray().then((lists) => {
     res.setHeader("Content-Type", "application/json");
-    res.setHeader("Access-Controll-Allow-Origin", "*");
     res.status(200).json(lists);
   });
 };
@@ -16,7 +15,6 @@ const getContact = async (req, res) => {
   const result = await mongodb.getDb().db("test").collection("contacts").find({ _id: o_id });
   result.toArray().then((list) => {
     res.setHeader("Content-Type", "application/json");
-    res.setHeader("Access-Controll-Allow-Origin", "*");
     if (list.length == 0) {
       res.status(200).json({ message: `No match for ${searchParam}` });
     } else {
@@ -63,7 +61,7 @@ const deleteContact = async (req, res) => {
     const id = new ObjectId(req.params.id);
     const result = await mongodb.getDb().db("test").collection("contacts").deleteOne({ _id: id });
     console.log({ action: "delete", deleted: result.deletedCount });
-    res.status(200).json(result);
+    res.status(204);
   } catch (error) {
     console.log(error);
   }

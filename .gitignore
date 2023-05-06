@@ -5,3 +5,14 @@ frontend/index.html
 frontend/script.js
 frontend/style.css
 app.js
+view/contacts/index.html
+view/contacts/css/large.css
+view/contacts/css/medium.css
+view/contacts/css/normalize.css
+view/contacts/css/small.css
+view/contacts/images/chevron-down.svg
+view/contacts/images/edit.svg
+view/contacts/images/reload.svg
+view/contacts/images/trash.svg
+view/contacts/js/contact-min.js
+view/contacts/js/contact.js

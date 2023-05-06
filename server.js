@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000;
 app
   .use(bodyParser.json())
   .use((req, res, next) => {
-    res.setHeader("Access-Controll-Origin", "*");
+    res.setHeader("Access-Control-Allow-Origin", "*");
     next();
   })
   .use("/", require("./routes/index"));
