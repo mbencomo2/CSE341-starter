@@ -2,8 +2,11 @@
 ###
 # Root
 GET http://localhost:8080/ HTTP/1.1
-# Get all contacts
 ###
+# Read API Documentation
+GET http://localhost:8080/api-docs/ HTTP/1.1
+###
+# Get all contacts
 GET http://localhost:8080/contacts HTTP/1.1
 ###
 # Get a single contact
@@ -36,6 +39,9 @@ DELETE http://localhost:8080/contacts/<id> HTTP/1.1
 ###
 # Root
 GET https://w01-starter-service.onrender.com/ HTTP/1.1
+###
+# Read API Documentation
+GET https://w01-starter-service.onrender.com/api-docs/ HTTP/1.1
 ###
 # Get all contacts
 GET https://w01-starter-service.onrender.com/contacts HTTP/1.1

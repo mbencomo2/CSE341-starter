@@ -32,8 +32,10 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-promise": "^6.1.1",
+    "nodemon": "^2.0.22",
     "prettier": "^2.8.8",
-    "nodemon": "^2.0.22"
+    "swagger-autogen": "^2.23.1",
+    "swagger-ui-express": "^4.6.3"
   },
   "engines": {
     "node": ">=18"
