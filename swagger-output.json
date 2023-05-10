@@ -5,7 +5,7 @@
     "description": "A simple test API for learning NodeJS",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "https://contacts-backend-pcq7.onrender.com",
   "basePath": "/",
   "schemes": [
     "http"
