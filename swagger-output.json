@@ -5,7 +5,7 @@
     "description": "A simple test API for learning NodeJS",
     "version": "1.0.0"
   },
-  "host": "https://contacts-backend-pcq7.onrender.com",
+  "host": "contacts-backend-pcq7.onrender.com",
   "basePath": "/",
   "schemes": [
     "http"
@@ -33,6 +33,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -63,7 +66,7 @@
                   "type": "string",
                   "example": "any"
                 },
-                "favColor": {
+                "favoriteColor": {
                   "type": "string",
                   "example": "any"
                 }
@@ -73,7 +76,7 @@
                 "lastName",
                 "email",
                 "birthday",
-                "favColor"
+                "favoriteColor"
               ]
             }
           }
@@ -81,6 +84,9 @@
         "responses": {
           "201": {
             "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
@@ -103,6 +109,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -139,7 +148,7 @@
                   "type": "string",
                   "example": "any"
                 },
-                "favColor": {
+                "favoriteColor": {
                   "type": "string",
                   "example": "any"
                 }
@@ -149,7 +158,7 @@
                 "lastName",
                 "email",
                 "birthday",
-                "favColor"
+                "favoriteColor"
               ]
             }
           }
@@ -157,6 +166,9 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
