@@ -3,26 +3,36 @@ const ObjectId = require("mongodb").ObjectId;
 
 const getContacts = async (req, res) => {
   // #swagger.summary = 'Grabs all contacts from the database'
-  const result = await mongodb.getDb().db("test").collection("contacts").find();
-  result.toArray().then((lists) => {
-    res.setHeader("Content-Type", "application/json");
-    res.status(200).json(lists);
-  });
+  try {
+    const result = await mongodb.getDb().db("test").collection("contacts").find();
+    result.toArray().then((lists) => {
+      res.setHeader("Content-Type", "application/json");
+      res.status(200).json(lists);
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
 };
 
 const getContact = async (req, res) => {
   // #swagger.summary = 'Grab a single contact by id'
-  const searchParam = req.params.id;
-  const o_id = new ObjectId(searchParam);
-  const result = await mongodb.getDb().db("test").collection("contacts").find({ _id: o_id });
-  result.toArray().then((list) => {
-    res.setHeader("Content-Type", "application/json");
-    if (list.length == 0) {
-      res.status(200).json({ message: `No match for ${searchParam}` });
-    } else {
-      res.status(200).json(list);
-    }
-  });
+  try {
+    const searchParam = req.params.id;
+    const o_id = new ObjectId(searchParam);
+    const result = await mongodb.getDb().db("test").collection("contacts").find({ _id: o_id });
+    result.toArray().then((list) => {
+      res.setHeader("Content-Type", "application/json");
+      if (list.length == 0) {
+        res.status(200).json({ message: `No match for ${searchParam}` });
+      } else {
+        res.status(200).json(list);
+      }
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
 };
 
 const createContact = async (req, res) => {
@@ -34,7 +44,7 @@ const createContact = async (req, res) => {
           $lastName: 'any',
           $email: 'any',
           $birthday: 'any',
-          $favColor: 'any'
+          $favoriteColor: 'any'
         }
       } 
       #swagger.summary = 'Create a new contact'
@@ -46,6 +56,7 @@ const createContact = async (req, res) => {
     res.status(201).json(result);
   } catch (error) {
     console.log(error);
+    res.status(500).json(error);
   }
 };
 
@@ -58,7 +69,7 @@ const updateContact = async (req, res) => {
             $lastName: 'any',
             $email: 'any',
             $birthday: 'any',
-            $favColor: 'any'
+            $favoriteColor: 'any'
           }
         }
         #swagger.summary = 'Make a change to an existing contact. This also creates a new contact if one does not exist.'
@@ -81,6 +92,7 @@ const updateContact = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
+    res.status(500).json(error);
   }
 };
 
@@ -93,6 +105,7 @@ const deleteContact = async (req, res) => {
     res.status(204);
   } catch (error) {
     console.log(error);
+    res.status(500).json(error);
   }
 };
 
